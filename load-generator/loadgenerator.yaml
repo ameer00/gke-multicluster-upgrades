@@ -34,7 +34,7 @@ spec:
         image: loadgenerator
         env:
         - name: FRONTEND_ADDR
-          value: "frontend:80"
+          value: "GCLB_VIP:80"
         - name: USERS
           value: "10"
         resources:
