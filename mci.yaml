@@ -1,0 +1,10 @@
+apiVersion: networking.gke.io/v1beta1
+kind: MultiClusterIngress
+metadata:
+  name: frontend-multicluster-ingress
+spec:
+  template:
+    spec:
+      backend:
+       serviceName: frontend-multicluster-svc
+       servicePort: 80

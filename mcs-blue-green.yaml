@@ -1,0 +1,17 @@
+apiVersion: networking.gke.io/v1beta1
+kind: MultiClusterService
+metadata:
+  name: frontend-multicluster-svc
+spec:
+  template:
+    spec:
+      selector:
+        app: frontend
+      ports:
+      - name: web
+        protocol: TCP
+        port: 80
+        targetPort: 8080
+  clusters:
+  - link: "us-west1-b/blue"
+  - link: "us-west1-c/green"
